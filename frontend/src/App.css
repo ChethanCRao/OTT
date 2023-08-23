@@ -1214,7 +1214,7 @@ body {
 }
 
 .signup-form {
-  max-width: 400px;
+  max-width: 300px;
   margin-top: 90px;
   margin-left: 32%;
   padding: 30px;
@@ -1231,7 +1231,6 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
   margin-right: 30px;
 }
 
@@ -1296,6 +1295,12 @@ body {
 }
 
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
 
 
 

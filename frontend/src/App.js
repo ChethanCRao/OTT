@@ -7,6 +7,8 @@ import Header from "./Components/Header";
 import VideoButton from "./Components/VideoButton";
 import Footer from "./Components/Footer";
 import SignUpForm from "./Components/SignUpForm";
+import SubscriptionForm from "./Components/SubscriptionForm";
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path="/Categories" element={<Categories/>}/>
           <Route path="/VideoButton" element={<VideoButton/>}/>
           <Route path="/SignUpForm" element={<SignUpForm/>}/>
+          <Route path="/SubscriptionForm" element={<SubscriptionForm/>}/>
         </Routes>
         <Footer/>
       </Router>

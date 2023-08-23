@@ -22,7 +22,7 @@ const VideoButton = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column'}}>
-      <h2 style={{ marginBottom: '10px',color: 'white' }}>KGF Chapter2 Teaser</h2>
+      <h2 style={{ marginBottom: '5px',color: 'white' }}>KGF Chapter2 Teaser</h2>
       <div style={{ position: 'relative' }}>
         {!isPlaying && (
           <div
@@ -35,7 +35,7 @@ const VideoButton = () => {
             }}
           ></div>
         )}
-        <video ref={videoRef} width="700" height="400" controls>
+        <video ref={videoRef} width="630" height="380" controls>
           <source src="/Videos/KGF 2.mp4" type="video/mp4" />
         </video>
       </div>
@@ -48,7 +48,9 @@ const VideoButton = () => {
               fontFamily: 'Times New Roman',
               fontWeight: 'bold',
               cursor: 'pointer',
-              fontSize: '20px',
+              fontSize: '16px',
+              paddingTop: '6px',
+            paddingBottom: '6px',
               marginRight: '10px',
               borderRadius: '5px',
               transition: 'background-color 0.3s ease',
@@ -70,7 +72,9 @@ const VideoButton = () => {
               fontFamily: 'Times New Roman',
               fontWeight: 'bold',
               cursor: 'pointer',
-              fontSize: '20px',
+              fontSize: '16px',
+              paddingTop: '6px',
+            paddingBottom: '6px',
               marginRight: '10px',
               borderRadius: '5px',
               transition: 'background-color 0.3s ease',
@@ -93,7 +97,9 @@ const VideoButton = () => {
             fontFamily: 'Times New Roman',
             fontWeight: 'bold',
             cursor: 'pointer',
-            fontSize: '20px',
+            fontSize: '16px',
+            paddingTop: '6px',
+            paddingBottom: '6px',
             marginRight: '10px',
             borderRadius: '5px',
             transition: 'background-color 0.3s ease',

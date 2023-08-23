@@ -1,5 +1,10 @@
 import React from "react";
 import "../App.css";
+import { NavLink } from 'react-router-dom';
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 export default function Footer() {
   return (
@@ -13,7 +18,9 @@ export default function Footer() {
       <div className="career">-Career</div>
       <div className="contact-us">-Contact Us</div>
       <div className="account-parent">
-        <div className="account">-Account</div>
+      <NavLink to="/SignUpForm" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
+          <div className="account">-Account</div>
+        </NavLink>
         <div className="buy-gift-card">-Buy Gift Card</div>
         <div className="redeem-gift-card">-Redeem Gift Card</div>
         <div className="manage-account">-Manage Account</div>

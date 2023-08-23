@@ -2,6 +2,12 @@ import React from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -33,7 +39,13 @@ const Homepage = () => {
           </div>
           <img className="group-inner" alt="" src="/group-1.svg" />
           <div className="rectangle-parent">
-          <button style={{marginLeft: "6%",cursor: "pointer"}} onClick={() => navigate("/VideoButton")}>
+          <button
+        style={{ marginLeft: "6%", cursor: "pointer" }}
+        onClick={() => {
+          window.scrollTo(0, 0); // Scroll to the top
+          navigate("/VideoButton"); // Navigate to the /VideoButton page
+        }}
+      >
       <div className="rectangle-div" />
       <img className="polygon-icon" alt="" src="/polygon-1.svg" />
       <b className="watch-now">Watch Now</b>
@@ -56,7 +68,7 @@ const Homepage = () => {
         <div className="sci-fi">Sci- Fi</div>
         <div className="movie-sec-4">
         <div className="movies">
-          <button onClick={() => navigate("/Android")}>
+        <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
               <img className="fan-img2-icon" alt="" src="/fanimg2@2x.png" />            
               <img className="fan-img3-icon" alt="" src="/fanimg3@2x.png" />
               <img className="fan-img4-icon" alt="" src="/fanimg4@2x.png" />
@@ -65,7 +77,7 @@ const Homepage = () => {
               <img className="fan-img6-icon" alt="" src="/fanimg6@2x.png" />
               <img className="fan-img7-icon" alt="" src="/fanimg7@2x.png" />
               <img className="fan-img8-icon" alt="" src="/fanimg8@2x.png" /> 
-              </button>
+              </NavLink>
           </div>
         </div>
         <div className="movies1">

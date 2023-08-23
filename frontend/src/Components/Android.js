@@ -40,7 +40,11 @@ const Android = () => {
             international espionage on a mission that will unfold in something beyond<br/>
             real time.
           </div>
-          <button style={{marginLeft: "67.5%",marginTop: "35%"}} onClick={() => navigate("/VideoButton")}>
+          <button style={{marginLeft: "67.5%",marginTop: "35%"}} onClick={() => {
+          window.scrollTo(0, 0); // Scroll to the top
+          navigate("/VideoButton"); // Navigate to the /VideoButton page
+        }}
+      >
           <img style={{cursor: "pointer"}}
             className="ri-play-circle-fill-icon1"
             alt=""
