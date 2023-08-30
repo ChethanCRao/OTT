@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SubscriptionForm.css';
+import { Link } from 'react-router-dom';
+
 
 const SubscriptionForm = ({ onSubmit }) => {
   const [email, setEmail] = useState('');
@@ -12,6 +14,22 @@ const SubscriptionForm = ({ onSubmit }) => {
 
   return (
     <div>
+      <b className="watchflix" style={{fontSize: "25px",marginLeft: "15px",marginTop: "10px"}}>
+      <span style={{color: "white"}}>Watch</span>
+        <span className="flix">Flix</span>
+        </b>
+        <div className="group-child" />
+        <div className="sign-up-parent">
+        <Link to="/SignUpForm" className="sign-up" style={{textDecoration: "none",color: "white"}}>
+        <b>Sign up</b>
+      </Link>
+          <img className="bx-search-icon" alt="" src="/bxbxsearch.svg" />
+          <img
+            className="claritybell-outline-badged-icon100"
+            alt=""
+            src="/claritybelloutlinebadged.svg"
+          />
+        </div>
       <form className="custom-form" onSubmit={(e) => e.preventDefault()}>
   <label>
     Email:
