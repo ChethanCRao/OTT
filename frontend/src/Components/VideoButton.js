@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const VideoButton = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -22,6 +23,22 @@ const VideoButton = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column'}}>
+      <div className="group-child" />
+        <div className="sign-up-parent">
+        <Link to="/SignUpForm" className="sign-up" style={{textDecoration: "none",color: "white"}}>
+        <b>Sign up</b>
+      </Link>
+          <img className="bx-search-icon" alt="" src="/bxbxsearch.svg" />
+          <img
+            className="claritybell-outline-badged-icon100"
+            alt=""
+            src="/claritybelloutlinebadged.svg"
+          />
+        </div>
+      <b className="watchflix" style={{fontSize: "25px",marginLeft: "15px",marginTop: "10px"}}>
+      <span style={{color: "white"}}>Watch</span>
+        <span className="flix">Flix</span>
+        </b>
       <h2 style={{ marginBottom: '5px',color: 'white' }}>KGF Chapter2 Teaser</h2>
       <div style={{ position: 'relative' }}>
         {!isPlaying && (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,22 @@ const SignUpForm = () => {
 
   return (
     <div className="signup-form">
+      <b className="watchflix" style={{fontSize: "25px",marginLeft: "15px",marginTop: "10px"}}>
+      <span style={{color: "white"}}>Watch</span>
+        <span className="flix">Flix</span>
+        </b>
+        <div className="group-child" />
+        <div className="sign-up-parent">
+        <Link to="/SignUpForm" className="sign-up" style={{textDecoration: "none",color: "white"}}>
+        <b>Sign up</b>
+      </Link>
+          <img className="bx-search-icon" alt="" src="/bxbxsearch.svg" />
+          <img
+            className="claritybell-outline-badged-icon100"
+            alt=""
+            src="/claritybelloutlinebadged.svg"
+          />
+        </div>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">

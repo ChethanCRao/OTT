@@ -12,9 +12,6 @@ const Android = () => {
       <img className="ri-menu-fill-icon" alt="" src="/rimenufill.svg" />
       <img className="bxbx-search-icon" alt="" src="/bxbxsearch.svg" />
       <div className="android-child" />
-      <div style={{ color: 'white', position: 'absolute', zIndex: 2, top: '305%', left: '6%', transform: 'translate(-50%, -50%)', fontSize: '30px',fontWeight: 'bold'}}>
-        Logo
-      </div>
       <div className="mask-group-parent">
         <img className="mask-group-icon22" alt="" src="/mask-group@21.png" />
         <div className="rectangle-group">

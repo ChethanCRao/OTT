@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 
 
-mongoose.connect(DB)
+mongoose.connect(process.env.DB,)
 
 app.use(cors());
 
