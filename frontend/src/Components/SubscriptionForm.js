@@ -11,7 +11,7 @@ export default function Subcription() {
       name: "Basic Plan",
       price: 199,
       features: ["480p Video Quality"], 
-      Link: "https://buy.stripe.com/test_dR6g12djf2NJ2ysbIJ",
+      Link: "https://buy.stripe.com/test_fZe8yA0wt5ZV1uo5ko",
     },
     {
       id: 2,
