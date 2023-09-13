@@ -53,7 +53,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-
+        <br/>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -65,7 +65,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-
+        <br/>
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
