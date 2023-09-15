@@ -1,20 +1,20 @@
 require("dotenv").config();
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const cors = require("cors");
 
 
-mongoose.connect(process.env.DB,)
+// mongoose.connect(process.env.DB);
 
 app.use(cors());
 
 // database connection
-require("./db/conn");
-const banner = require("./model/BannerSchema");
-const horror = require("./model/horror.schema");
-const scific = require("./model/scific.schema");
-const trending = require("./model/trending.schema");
+// require("./db/conn");
+// const banner = require("./model/BannerSchema");
+// const horror = require("./model/horror.schema");
+// const scific = require("./model/scific.schema");
+// const trending = require("./model/trending.schema");
 
 app.get("/banner", (req, res) => {
   banner.find({}).then((result) => {

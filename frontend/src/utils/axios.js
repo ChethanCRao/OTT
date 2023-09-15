@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://watchflix-h69u.onrender.com";
 
 const getBackendData = async (endpoint) => {
   return new Promise((resolve, reject) => {
