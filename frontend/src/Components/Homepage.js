@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState, } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import getBackendData from "../utils/axios";
 
 
 const scrollToTop = () => {
@@ -10,11 +11,24 @@ const scrollToTop = () => {
 };
 
 const Homepage = () => {
+  const [bannerData, setBannerData] = useState();
   const navigate = useNavigate();
+
+  const doSomething = async () => {
+    // code here...
+    getBackendData(`/banner`).then((res) => {
+      console.log(res);
+      setBannerData(res?.data[0]);
+    });
+  };
+  
+  useEffect(() => {
+    doSomething();
+  }, []);
   return (
     <div className="homepage">
       <div className="mask-group-parent">
-        <img className="mask-group-icon" alt="" src="/mask-group@2x.png" />
+        <img className="mask-group-icon" alt="" src={bannerData?.bannerImage}/>
         <div className="group-child" />
         <div className="sign-up-parent">
         <Link to="/SignUpForm" className="sign-up" style={{textDecoration: "none",color: "white"}}>
@@ -29,7 +43,7 @@ const Homepage = () => {
         </div>
         <div className="group-item" />
         <div className="blade-runner-2049-parent">
-          <b className="blade-runner-2049">Blade Runner 2049</b>
+          <b className="blade-runner-2049">{bannerData?.title}</b>
           <div className="thirty-years-after">
             Thirty years after the events of the first film, a new blade runner,
             LAPD Officer K (Ryan Gosling), unearths a long buried secret that

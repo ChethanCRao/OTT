@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './SubscriptionForm.css';
+import { Link } from 'react-router-dom';
 
 export default function Subcription() {
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -42,6 +43,21 @@ export default function Subcription() {
         marginTop: "100px",
       }}
     >
+      <b className="watchflix" style={{fontSize: "25px",marginLeft: "15px",marginTop: "10px"}}>
+        <span style={{color: "white"}}>Watch</span>
+        <span className="flix">Flix</span>
+      </b>
+      <div className="sign-up-parent">
+        <Link to="/SignUpForm" className="sign-up" style={{textDecoration: "none",color: "white"}}>
+        <b>Sign up</b>
+      </Link>
+          <img className="bx-search-icon" alt="" src="/bxbxsearch.svg" />
+          <img
+            className="claritybell-outline-badged-icon100"
+            alt=""
+            src="/claritybelloutlinebadged.svg"
+          />
+        </div> 
       <h1>Choose a Plan</h1>
       <div
         className="plans" 
