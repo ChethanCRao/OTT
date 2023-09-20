@@ -1,10 +1,9 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import getBackendData from "../utils/axios";
-
+import ReactPlayer from "react-player";
 
 const scrollToTop = () => {
   window.scrollTo(0, 0);
@@ -12,7 +11,13 @@ const scrollToTop = () => {
 
 const Homepage = () => {
   const [bannerData, setBannerData] = useState();
-  const navigate = useNavigate();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playerRef = useRef(null);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
 
   const doSomething = async () => {
     // code here...
@@ -49,17 +54,22 @@ const Homepage = () => {
           </div>
           <img className="group-inner" alt="" src="/group-1.svg" />
           <div className="rectangle-parent">
-          <button
-        style={{ marginLeft: "6%", cursor: "pointer" }}
-        onClick={() => {
-          window.scrollTo(0, 0); // Scroll to the top
-          navigate("/VideoButton"); // Navigate to the /VideoButton page
-        }}
-      >
-      <div className="rectangle-div" />
+          <div className="video100" onClick={handlePlay}>
+                {isPlaying && (
+                  <ReactPlayer
+                  className="custom-video-player"
+                  url={bannerData?.videoUrl}
+                  playing={isPlaying}
+                  ref={playerRef}
+                  controls
+                  height="250px"
+                  width="450px"
+                />
+                )}
+      <div  className="rectangle-div" />
       <img className="polygon-icon" alt="" src="/polygon-1.svg" />
       <b className="watch-now">Watch Now</b>
-      </button>
+      </div>
           </div>
         </div>
         <div className="group-parent" style={{top: "490px"}}>

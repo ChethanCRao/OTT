@@ -95,7 +95,7 @@ export default function Subcription() {
           <p style={{fontFamily: "times new roman",fontWeight: "bold"}}>No Plan Selected.</p>
         )}
       </div>
-      <button
+      <button className="btn80"
   disabled={!selectedPlan}
   style={{
     margin: "10px",

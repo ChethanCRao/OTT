@@ -1303,6 +1303,20 @@ body {
   height: 100vh; 
 }
 
+.video100{
+  margin-left: 340%;
+  margin-top: -105%;
+  cursor: pointer;
+}
+
+/* App.css */
+
+.custom-video-player {
+  background-color: burlywood;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+}
+
 
 
 
