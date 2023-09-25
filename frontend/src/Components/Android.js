@@ -1,8 +1,8 @@
+import React from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 const Android = () => {
   const navigate = useNavigate();
-  
   return (
     <div className="android">
       <div className="rectangle-parent" style={{marginRight: "300px"}}>

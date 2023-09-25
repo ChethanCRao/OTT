@@ -431,20 +431,20 @@
   top: 1881px;
   left: 300px;
   color: white;
-  font-size: var(--font-size-xs);
+  font-size: 17px;
 }
 .career,
 .contact-us,
 .help-center {
-  top: 1929px;
+  top: 1932px;
 }
 
 .career,
 .contact-us {
-  top: 1953px;
+  top: 1958px;
 }
 .contact-us {
-  top: 1905px;
+  top: 1907px;
   left: 300px;
 }
 .account,
@@ -454,16 +454,16 @@
   left: 0;
 }
 .buy-gift-card {
-  top: 48px;
+  top: 52px;
 }
 .manage-account,
 .redeem-gift-card {
   position: absolute;
-  top: 72px;
+  top: 77px;
   left: 0;
 }
 .manage-account {
-  top: 24px;
+  top: 27px;
 }
 .account-parent,
 .privacy-parent {
@@ -472,7 +472,7 @@
   left: 700px;
   width: 180px;
   height: 87px;
-  font-size: var(--font-size-xs);
+  font-size: 17px;
   color: white;
 }
 .privacy-parent {
@@ -1277,6 +1277,7 @@ body {
 }
 .styled-button {
   background-color: blue; 
+  margin-top: 10px;
   border: none; 
   color: white; 
   font-weight: bold;
@@ -1286,7 +1287,7 @@ body {
   text-decoration: none; 
   display: inline-block; 
   font-size: 16px; 
-  border-radius: 10px; 
+  border-radius: 7px; 
   cursor: pointer; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
@@ -1314,6 +1315,8 @@ body {
   background-color: rgb(33, 33, 33);
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
   border-radius: 15px; 
 }
 

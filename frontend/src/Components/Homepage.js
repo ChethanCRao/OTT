@@ -13,6 +13,10 @@ const Homepage = () => {
   const [bannerData, setBannerData] = useState();
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const [trendImage, setTrendImage] = useState();
+  const [scificImage, setScificImage] = useState();
+  const [horrorImage, setHorrorImage] = useState();
+
   const playerRef = useRef(null);
 
   const handlePlay = () => {
@@ -24,6 +28,21 @@ const Homepage = () => {
     getBackendData(`/banner`).then((res) => {
       console.log(res);
       setBannerData(res?.data[0]);
+
+      getBackendData(`/trending`).then((res) => {
+        console.log(res);
+        setTrendImage(res?.data);
+      });
+
+      getBackendData(`/horror`).then((res) => {
+        console.log(res);
+        setHorrorImage(res?.data);
+      });
+
+      getBackendData(`/scific`).then((res) => {
+        console.log(res);
+        setScificImage(res?.data);
+      });
     });
   };
   
@@ -89,37 +108,38 @@ const Homepage = () => {
         <div className="movie-sec-4">
         <div className="movies">
         <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
-              <img className="fan-img2-icon" alt="" src="/fanimg2@2x.png" />            
-              <img className="fan-img3-icon" alt="" src="/fanimg3@2x.png" />
-              <img className="fan-img4-icon" alt="" src="/fanimg4@2x.png" />
-              <img className="fan-img5-1-icon" alt="" src="/fanimg5-1@2x.png" />
-              <img className="fan-img5-2-icon" alt="" src="/fanimg5-2@2x.png" />
-              <img className="fan-img6-icon" alt="" src="/fanimg6@2x.png" />
-              <img className="fan-img7-icon" alt="" src="/fanimg7@2x.png" />
-              <img className="fan-img8-icon" alt="" src="/fanimg8@2x.png" /> 
+        {trendImage?.map((item, id) => {
+                return (
+                  <>
+                    <img alt="" src={item.imageurl} />
+                  </>
+                );
+              })} 
               </NavLink>
           </div>
         </div>
         <div className="movies1">
-          <img className="fan-img2-icon1" alt="" src="/fanimg21@2x.png" />
-          <img className="fan-img3-icon1" alt="" src="/fanimg31@2x.png" />
-          <img className="fan-img4-icon1" alt="" src="/fanimg41@2x.png" />
-          <img className="fan-img5-1-icon1" alt="" src="/fanimg5-11@2x.png" />
-          <img className="fan-img5-2-icon1" alt="" src="/fanimg5-21@2x.png" />
-          <img className="fan-img6-icon1" alt="" src="/fanimg61@2x.png" />
-          <img className="fan-img7-icon1" alt="" src="/fanimg71@2x.png" />
-          <img className="fan-img8-icon1" alt="" src="/fanimg81@2x.png" />
+        <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
+        {horrorImage?.map((item, id) => {
+                return (
+                  <>
+                    <img alt="" src={item.imageurl} />
+                  </>
+                );
+              })} 
+              </NavLink>
         </div>
         <div className="movie-sec-3">
           <div className="movies2">
-            <img className="fan-img2-icon2" alt="" src="/fanimg22@2x.png" />
-            <img className="fan-img3-icon2" alt="" src="/fanimg32@2x.png" />
-            <img className="fan-img4-icon2" alt="" src="/fanimg42@2x.png" />
-            <img className="fan-img5-1-icon2" alt="" src="/fanimg5-21@2x.png"/>
-            <img className="fan-img5-2-icon2" alt="" src="/fanimg5-22@2x.png" />
-            <img className="fan-img6-icon2" alt="" src="/fanimg62@2x.png" />
-            <img className="fan-img7-icon2" alt="" src="/fanimg72@2x.png" />
-            <img className="fan-img8-icon2" alt="" src="/fanimg82@2x.png" />
+          <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
+        {scificImage?.map((item, id) => {
+                return (
+                  <>
+                    <img alt="" src={item.imageurl} />
+                  </>
+                );
+              })} 
+              </NavLink>
           </div>
         </div>
       </div>
