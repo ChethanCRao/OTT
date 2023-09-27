@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ReactPlayer from "react-player";
 
 const Android = () => {
-  const navigate = useNavigate();
 
   const [movieData, setMovieData] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);
@@ -59,23 +57,26 @@ const Android = () => {
             real time.
           </div>
           <div className="video200" onClick={handlePlay}>
-          {isPlaying && (
-                  <ReactPlayer
-                  className="custom-video-player"
-                  url={movieData?.videourl}
-                  playing={isPlaying}
-                  ref={playerRef}
-                  controls
-                  height="250px"
-                  width="450px"
-                />
-                )}
-          <img style={{cursor: "pointer"}}
-            className="ri-play-circle-fill-icon1"
-            alt=""
-            src="/riplaycirclefill.svg"
-          />
-           </div>
+  <div className="video-overlay">
+    {isPlaying && (
+      <ReactPlayer
+        className="custom-video-player100"
+        url={movieData?.videourl}
+        playing={isPlaying}
+        ref={playerRef}
+        controls
+        height="250px"
+        width="450px"
+      />
+    )}
+  </div>
+  <img
+    style={{ cursor: "pointer" }}
+    className="ri-play-circle-fill-icon1"
+    alt=""
+    src="/riplaycirclefill.svg"
+  />
+</div>
           <div className="group-parent" style={{marginLeft: "28%"}}>
             <div className="ri-add-fill-parent" style={{marginLeft: "10%"}}>
               <img style={{width: "27px"}} className="ri-add-fill-icon" alt="" src="/riaddfill.svg" />
@@ -87,11 +88,13 @@ const Android = () => {
                 alt=""
                 src="/risharefill.svg" 
               />
-              <div className="share" style={{fontSize: "15px",color: "white",marginTop: "39px",fontWeight: "bolder"}}>SHARE</div>
-            </div>
+              </div>
+              <div className="share" style={{fontSize: "15px",color: "white",marginTop: "39px",fontWeight: "bolder",marginLeft: "90%"}}>SHARE</div>
           </div>
-          <div className="more-like-this" style={{color: "white"}}>More Like This</div>
         </div>
+        <div className="more-like" style={{ color: "white", position: "absolute", top: "42%", left: "23.7%", fontSize: "22px" }}>
+        More Like This
+      </div>
       </div>
       <div className="movie-sec-4">
         <div className="movies" style={{marginTop: "40px",marginLeft: "293px"}}>
