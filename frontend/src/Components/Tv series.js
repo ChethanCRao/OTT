@@ -1,27 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import ReactPlayer from "react-player";
 
-const Android = () => {
-  const navigate = useNavigate();
+const Tvseries = () => {
 
-  const [movieData, setMovieData] = useState({});
-  const [isPlaying, setIsPlaying] = useState(false);
-  let location = useLocation();
-
-  useEffect(() => {
-    const movie = location?.state?.movieItem;
-    console.log(movie);
-    setMovieData(movie);
-  }, [location?.state?.movieItem]);
-
-  const playerRef = useRef(null);
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-  };
+    const navigate = useNavigate();
+    
   return (
     <div className="android">
       <div className="rectangle-parent" style={{marginRight: "300px"}}>
@@ -32,13 +16,11 @@ const Android = () => {
       <img className="bxbx-search-icon" alt="" src="/bxbxsearch.svg" />
       <div className="android-child" />
       <div className="mask-group-parent">
-        <img className="mask-group-icon22" alt="" src={movieData?.banner} />
+        <img className="mask-group-icon22" alt="" src="/mask-group@21.png" />
         <div className="rectangle-group">
           <div className="group-inner" />
-          <div className="tenet22">{movieData?.title}</div>
-          <div className="h-30-min1">{parseFloat(movieData?.imdbrating)}
-          &nbsp;&nbsp;&nbsp;&nbsp;2 h 30 min &nbsp;&nbsp;&nbsp;&nbsp;
-          {movieData?.released}</div>
+          <div className="tenet22">Tenet</div>
+          <div className="h-30-min1">7.3 2 h 30 min 2020</div>
           <img className="xmlid-1-icon1" alt="" src="/xmlid-1.svg" />
           <div className="types">
             <div className="action1">Action</div>
@@ -58,24 +40,17 @@ const Android = () => {
             international espionage on a mission that will unfold in something beyond<br/>
             real time.
           </div>
-          <div className="video200" onClick={handlePlay}>
-          {isPlaying && (
-                  <ReactPlayer
-                  className="custom-video-player"
-                  url={movieData?.videourl}
-                  playing={isPlaying}
-                  ref={playerRef}
-                  controls
-                  height="250px"
-                  width="450px"
-                />
-                )}
+          <button style={{marginLeft: "67.5%",marginTop: "35%"}} onClick={() => {
+          window.scrollTo(0, 0); // Scroll to the top
+          navigate("/VideoButton"); // Navigate to the /VideoButton page
+        }}
+      >
           <img style={{cursor: "pointer"}}
             className="ri-play-circle-fill-icon1"
             alt=""
             src="/riplaycirclefill.svg"
           />
-           </div>
+          </button>
           <div className="group-parent" style={{marginLeft: "28%"}}>
             <div className="ri-add-fill-parent" style={{marginLeft: "10%"}}>
               <img style={{width: "27px"}} className="ri-add-fill-icon" alt="" src="/riaddfill.svg" />
@@ -111,4 +86,4 @@ const Android = () => {
   );
 };
 
-export default Android;
+export default Tvseries;

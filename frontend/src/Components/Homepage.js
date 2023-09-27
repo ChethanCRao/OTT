@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import Trending from "./Trending";
+import Horror from "./Horror";
+import Scific from "./Sci-fic"
 import "../App.css";
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -109,36 +112,36 @@ const Homepage = () => {
         <div className="movies">
         <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
         {trendImage?.map((item, id) => {
-                return (
-                  <>
-                    <img alt="" src={item.imageurl} />
-                  </>
-                );
-              })} 
+            return (
+              <>
+                <Trending item={item} index={id} />
+              </>
+            );
+          })}
               </NavLink>
           </div>
         </div>
         <div className="movies1">
         <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
         {horrorImage?.map((item, id) => {
-                return (
-                  <>
-                    <img alt="" src={item.imageurl} />
-                  </>
-                );
-              })} 
+            return (
+              <>
+                <Horror item={item} index={id} />
+              </>
+            );
+          })}
               </NavLink>
         </div>
         <div className="movie-sec-3">
           <div className="movies2">
           <NavLink to="/Android" onClick={scrollToTop} style={{ textDecoration: 'none', color: 'white' }}>
-        {scificImage?.map((item, id) => {
-                return (
-                  <>
-                    <img alt="" src={item.imageurl} />
-                  </>
-                );
-              })} 
+          {scificImage?.map((item, id) => {
+            return (
+              <>
+                <Scific item={item} index={id} />
+              </>
+            );
+          })}
               </NavLink>
           </div>
         </div>
